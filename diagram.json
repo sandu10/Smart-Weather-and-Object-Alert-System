@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Sandunika Dulanji",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 173.4, "left": 9, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -182.1, "left": -15, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -109.2,
+      "left": -188.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -109.2,
+      "left": -130.6,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -190.5, "left": 91.9, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -32,
+      "left": 216.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 127.2,
+      "left": -142.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "led1:C", "uno:GND.1", "green", [ "v172.8", "h288.4" ] ],
+    [ "led2:C", "uno:GND.1", "green", [ "v153.6", "h240.4", "v48" ] ],
+    [ "led1:A", "uno:6", "green", [ "v163.2", "h364.8" ] ],
+    [ "led2:A", "uno:7", "green", [ "v144", "h297.6" ] ],
+    [ "bz1:2", "uno:8", "green", [ "v19.2", "h86", "v-86.4", "h201.6" ] ],
+    [ "bz1:1", "uno:GND.2", "green", [ "v192", "h297.6" ] ],
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h-96", "v19.2" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-441.6", "v422.5", "h393.6" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-460.8", "v384.2", "h499.2" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-480", "v374.7", "h528" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v86.4", "h-364.8", "v422.4", "h364.8" ] ],
+    [ "ultrasonic1:TRIG", "uno:9", "green", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "uno:10", "green", [ "v220.8", "h-20" ] ],
+    [ "ultrasonic1:GND", "uno:GND.3", "black", [ "v28.8", "h363.6", "v489.6", "h-364.8" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v115.2", "h-163.2", "v393.6", "h336" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v28.8", "h96" ] ],
+    [ "dht1:SDA", "uno:2", "green", [ "v220.8", "h240.1" ] ]
+  ],
+  "dependencies": {}
+}
